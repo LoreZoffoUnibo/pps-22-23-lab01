@@ -53,7 +53,7 @@ public class CircularListImpl implements CircularList {
 
     @Override
     public void reset() {
-
+        this.currentIndex = 0;
     }
 
     private void changeIndex(final int amount){
@@ -66,5 +66,7 @@ public class CircularListImpl implements CircularList {
             this.currentIndex = 0;
             return;
         }
+
+        this.currentIndex += amount;
     }
 }
