@@ -33,4 +33,15 @@ class CircularListImplTest {
         assertTrue(circularList.isEmpty());
     }
 
+    @Test
+    void testNextCircular(){
+        circularList.add(13);
+        circularList.add(22);
+        circularList.add(872);
+        circularList.next();
+        circularList.next();
+        circularList.next();
+        assertEquals(13, circularList.next().get());
+    }
+
 }
