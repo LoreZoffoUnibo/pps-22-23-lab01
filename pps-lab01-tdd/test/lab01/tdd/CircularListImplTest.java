@@ -19,4 +19,13 @@ class CircularListImplTest {
         circularList.add(4);
         assertEquals(4, circularList.next().get());
     }
+
+    @Test
+    void testSize(){
+        circularList.add(13);
+        circularList.add(22);
+        circularList.add(872);
+        assertEquals(3, circularList.size());
+    }
+
 }
