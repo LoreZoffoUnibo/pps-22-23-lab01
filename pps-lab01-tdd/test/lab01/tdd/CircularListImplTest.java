@@ -52,4 +52,13 @@ class CircularListImplTest {
         assertFalse(circularList.next().isPresent());
     }
 
+    @Test
+    void testPreviousCircular(){
+        circularList.add(13);
+        circularList.add(22);
+        circularList.add(872);
+        circularList.previous();
+        assertEquals(872, circularList.previous().get());
+    }
+
 }

@@ -34,16 +34,37 @@ public class CircularListImpl implements CircularList {
         if (this.list.isEmpty()){
             return  Optional.empty();
         }
-        return Optional.of(this.list.get(currentIndex%this.list.size()));
+
+        Integer tmp = this.list.get(this.currentIndex);
+        changeIndex(1);
+        return Optional.of(tmp);
     }
 
     @Override
     public Optional<Integer> previous() {
-        return Optional.empty();
+        if (this.list.isEmpty()){
+            return  Optional.empty();
+        }
+
+        Integer tmp = this.list.get(this.currentIndex);
+        changeIndex(-1);
+        return Optional.of(tmp);
     }
 
     @Override
     public void reset() {
 
+    }
+
+    private void changeIndex(final int amount){
+        if (this.currentIndex + amount < 0){
+            this.currentIndex = this.list.size()-1;
+            return;
+        }
+
+        if (this.currentIndex + amount >= this.list.size()){
+            this.currentIndex = 0;
+            return;
+        }
     }
 }
