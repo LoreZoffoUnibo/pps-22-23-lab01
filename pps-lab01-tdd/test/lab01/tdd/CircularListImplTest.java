@@ -28,4 +28,9 @@ class CircularListImplTest {
         assertEquals(3, circularList.size());
     }
 
+    @Test
+    void testIsEmpty(){
+        assertTrue(circularList.isEmpty());
+    }
+
 }
