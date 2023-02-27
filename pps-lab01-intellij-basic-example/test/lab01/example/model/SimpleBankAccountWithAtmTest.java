@@ -20,4 +20,10 @@ class SimpleBankAccountWithAtmTest {
     void testInitialBalance() {
         assertEquals(0, bankAccount.getBalance());
     }
+
+    @Test
+    void testDeposit() {
+        bankAccount.deposit(accountHolder.getId(), 100);
+        assertEquals(100-SimpleBankAccountWithAtm.TRANSACTION_FEE, bankAccount.getBalance());
+    }
 }
