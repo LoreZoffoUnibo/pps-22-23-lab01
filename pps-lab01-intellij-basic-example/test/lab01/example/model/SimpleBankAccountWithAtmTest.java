@@ -44,4 +44,11 @@ class SimpleBankAccountWithAtmTest {
 
         assertEquals(100-70-fee, bankAccount.getBalance());
     }
+
+    @Test
+    void testWrongWithdraw() {
+        bankAccount.deposit(accountHolder.getId(), 100);
+        bankAccount.withdraw(2, 70);
+        assertEquals(100-SimpleBankAccountWithAtm.TRANSACTION_FEE, bankAccount.getBalance());
+    }
 }
